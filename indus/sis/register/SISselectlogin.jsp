@@ -1,4 +1,4 @@
-<%@ page import="java.sql.*, java.util.*, com.cl.sql.PoolManager,oracle.jdbc.driver.*, org.apache.log4j.*" errorPage="/epage/anandaError.jsp"%> 
+<%@ page import="java.sql.*, java.util.*, com.cl.sql.PoolManager,oracle.jdbc.driver.*, org.apache.log4j.*" %> 
 <%
 	Connection connection = null;
 	PreparedStatement stat = null;
@@ -7,20 +7,14 @@
 	PoolManager pool = PoolManager.getInstance();
 	Category logCategory = Category.getInstance("SIS.register.SISselectlogin");
 
-	String customerid = request.getParameter("customerid");	
+	String enrollId = request.getParameter("enrollId");	
 	
-	String id = request.getParameter("id");
-	
-	if(id== null || id.trim().length()<=0)
-	{
-		id = " -1 ";
-	}
 	String monthofbirth=request.getParameter("monthofbirth");
 	String dayofbirth=request.getParameter("dayofbirth");
 	String yearofbirth=request.getParameter("yearofbirth");
 	String dateofbirth=dayofbirth+"/"+monthofbirth+"/"+yearofbirth;
 	int schoolId=Integer.parseInt(request.getParameter("schoolId"));
-	
+	String customerid="";
 	String userId = "";
 	String userName = "";
 	String password = "";
@@ -33,7 +27,7 @@
 		connection = pool.getConnection("erp"); 
 		call=connection.prepareCall("{CALL SIS_PKG.GET_CUST_USER_DETAIL(?,?,?,?,?,?,?,?)}");
 
-		call.setInt(1, Integer.parseInt(id));
+		call.setInt(1, Integer.parseInt(enrollId));
 		call.setString(2, dateofbirth);
 		call.setInt(3,schoolId);
 
@@ -239,7 +233,7 @@ function validatePwd1()
 					Please select a <font class="verbld">User name</font> and <font class="verbld">password</font> in the screen below . In future , 
 					You will need to enter this to access your personalized page.
 
-					This <font class="verbld">user name/password</font> will also enable you to access all <font class="verbld">careerlauncher.com</font> 
+					This <font class="verbld">user name/password</font> will also enable you to access all <font class="verbld">indusworldschool.com</font> 
 					services including <font class="verbld">SIS</font>.</p>
 				</div>
  

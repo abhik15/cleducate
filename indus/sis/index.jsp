@@ -71,12 +71,11 @@ body {
 <Script Language="JavaScript">
 function chkSelect()
 {
-	if (ChkBlank("form1.userName","Please enter Username.") == false) return false
-	if (ChkBlank("form1.password","Please enter your password.") == false) return false
+	if (ChkBlank("form1.uname","Please enter Username.") == false) return false;
+	if (ChkBlank("form1.pwd","Please enter your password.") == false) return false;
+	
 	else
-	{
-		document.form1.submit();
-	}
+	return true;
 }
 </SCRIPT>
 </head>
@@ -458,15 +457,15 @@ function chkSelect()
 		<center>
 			<font class="new"><b><%=message %></b></font>
 		</center>
-				<FORM METHOD=POST ACTION="auth.jsp">
+				<FORM name= "form1" METHOD="POST" ACTION="auth.jsp" onSubmit="return chkSelect()">
 					<TABLE border="0" cellspacing="3" cellpadding="0" class="runningtext">
 					<TR>
 						<TD>User Name:</TD>
-						<TD><INPUT TYPE="text" NAME="uname" class="inpBrd"></TD>
+						<TD><INPUT TYPE="text" NAME="uname" class="inpBrd" maxlength="12"></TD>
 					</TR>
 					<TR>
 						<TD>Password:</TD>
-						<TD><INPUT TYPE="password" NAME="pwd" class="inpBrd"></TD>
+						<TD><INPUT TYPE="password" NAME="pwd" class="inpBrd" maxlength="12"></TD>
 					</TR>
 					<TR>
 						<TD colspan="2" align="right"><INPUT TYPE="submit" class="inpBrd" value=" Login "></TD>
@@ -476,11 +475,11 @@ function chkSelect()
 		  </td>
             </tr>
 			<tr>
-				<td><a href="#" onclick="javascript: OpenWindow('/sis/register/forgotpassword.html','forgotpassword','450','400')" class="lnkblu">
+				<td><a href="#" onclick="javascript: OpenWindow('/sis/register/forgotpassword.html','forgotpassword','450','400')" class="smallbluelink">
 				Forgot your password?</a></td>
 			</tr>
 			<tr>
-				<td><a href="/sis/register/SISlogincidanddob.html" class="lnkblu">
+				<td><br><a href="/sis/register/SISlogincidanddob.html" class="smallbluelink">
 				Need a Login/password?</a></td>
 			</tr>
           </table></td>

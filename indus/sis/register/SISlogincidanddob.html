@@ -9,17 +9,14 @@
 function chkSelect()
 { 
 
-	if (ChkBlank("form1.id","Please Enter Enroll ID.") == false) return false
-	if (ChkNumber("form1.id","Please Enter Valid Enroll ID(Only Numbers).") == false) return false;
-	if(ChkDotInMobile("form1.id","Please Enter Enroll ID","7") == false) return false;
+	if (ChkBlank("form1.enrollId","Please Enter Enroll ID.") == false) return false
+	if (ChkNumber("form1.enrollId","Please Enter Valid Enroll ID(Only Numbers).") == false) return false;
 	if(ChkDOB("form1.dayofbirth","form1.monthofbirth","form1.yearofbirth")==false){
 	alert("Please correct the date of birth you have choosen, its an invalid date");
 	return false;	
 	}
 	else
-	{
-		document.form1.submit();
-	}
+	return true;
 } 
 //-->
 </script>
@@ -94,10 +91,10 @@ function chkSelect()
 </TR>
 
 <TR>
-	<TD align="left"><FONT class="lnkbld"><INPUT TYPE="hidden" NAME="enrollid" value="0">&nbsp;&nbsp;&nbsp;&nbsp;Enroll ID
+	<TD align="left"><FONT class="lnkbld">&nbsp;&nbsp;&nbsp;&nbsp;Enroll ID
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</td><td>
-		<INPUT TYPE="text" NAME="id" size="10" maxlength="7" class="boxborder">
+		<INPUT TYPE="text" NAME="enrollId" size="10" maxlength="7" class="boxborder">
 		</FONT>
 	</TD>
 </TR>
@@ -160,10 +157,12 @@ function chkSelect()
 		 <option value="12">December</option>
     </select> 
 	<select name=yearofbirth class="boxborder">
+		<option selected value="1980">1980</option>
 		<SCRIPT LANGUAGE="JavaScript">
 		<!--
-		var x=1980;
-		for(var a=x;a<x+24;a++)
+		var x=1981;
+		
+		for(var a=x;a<x+23;a++)
 		{
 		document.write("<option value=" +a +">" +a+ "</option>");
 		}

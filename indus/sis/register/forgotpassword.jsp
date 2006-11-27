@@ -1,5 +1,7 @@
 <%@ page import="java.io.*,java.sql.*,java.util.*,oracle.jdbc.driver.*,com.cl.sql.PoolManager" errorPage="/epage/anandaError.jsp"%>
-<html><head></head><body>
+<html><head>
+	<link href="/styles/indus.css" rel="stylesheet" type="text/css" /> 
+</head><body>
 <%
 	Connection connection = null;
 	PoolManager poolManager = PoolManager.getInstance();
@@ -21,10 +23,9 @@
 		call.registerOutParameter(3,OracleTypes.VARCHAR);
 		call.registerOutParameter(4,OracleTypes.NUMBER);
 
-		call.executeQuery();
+		call.execute();
 		uname=login;
 		int record = call.getInt(4);
-
 		if(record != 0)
 		{
 			password=call.getString(3);
@@ -49,12 +50,12 @@
 			<td><BR></td>
 		</tr>
 		<tr>
-			<td face="verdana" size="4"><b>Your password is: </b></td>
+			<td face="verdana" size="4" align="center"><b>Your password is successfully retrieved </b></td>
 		</tr>
 
 		<tr>
 			<td>
-			<center><font color=red size="2" face="verdana"><%=uname%> , <font color=navy>Your Password is:</font> <%=password%></font><BR><BR>
+			<center><font color=red size="2" face="verdana"><br>User Name :-&nbsp;<%=uname%>  <font color=navy><br><br>Your Password is:-&nbsp;</font> <%=password%></font><BR><BR>
 			</center>
 			
 			
@@ -84,3 +85,5 @@
 		try{call.close();}catch(Exception ex){}
 	}
 %>
+
+		<center><INPUT TYPE="Button"  value="close" onClick="window.close()" 	class="inpBrd"></input></center>
