@@ -1,0 +1,54 @@
+.global_nav {
+	font-family: "Arial";
+	font-size:19px;
+	color:#FFFFFF;
+	font-weight: lighter;
+	text-decoration:none;
+	}
+	
+.bottomnav 
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #11327D;
+	text-decoration:none;	
+}
+.runningtext
+{
+    FONT: 11px/18px Verdana;
+    COLOR: #333333
+}
+
+.highlighttext
+{
+    FONT: 11px/11.7pt Verdana;
+   	COLOR: #FFFFFF;
+}
+
+.boxborder {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 10px; BORDER-LEFT: #000000 1px solid; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.inpBrd {
+	BORDER-RIGHT: #aa87f1 1px solid; BORDER-TOP: #aa87f1 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: #aa87f1 1px solid; BORDER-BOTTOM: #aa87f1 1px solid; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+.new {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: red; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+
+.smallbluelink {
+	FONT-SIZE: 8pt; COLOR: #051694; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+
+.smallblue {
+	FONT-SIZE: 8pt; COLOR: #051694; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+
+.subheadblue {
+	FONT-SIZE: 8pt; 
+	font-weight: bold;
+	COLOR: #051694; 
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	TEXT-DECORATION: none
+	}

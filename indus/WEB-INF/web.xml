@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+    "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+
+<web-app>
+
+	<welcome-file-list> 
+		<welcome-file>index.jsp</welcome-file> 
+		<welcome-file>index.html</welcome-file> 
+		<welcome-file>default.jsp</welcome-file> 
+    </welcome-file-list> 
+
+	<!--  <listener>
+		<listener-class>
+		   com.cl.initservlet.ApplicationWatch
+		</listener-class>
+	 </listener> -->
+
+	 <!-- Start up servlets BEGIN -->
+		 <!-- CLMS Servlets BEGIN -->
+	 <servlet>
+		<servlet-name>CLMSShowAttachments</servlet-name>
+		<servlet-class>com.cl.servlet.CLMSShowAttachments</servlet-class>
+	 </servlet>
+	  <servlet>
+		<servlet-name>MSGXTextDownloads</servlet-name>
+		<servlet-class>com.cl.servlet.MSGXTextDownloads</servlet-class>
+	 </servlet>
+	 <!-- CLMS Servlets END -->
+
+	 
+
+	
+	 <servlet-mapping>
+		<servlet-name>invoker</servlet-name>
+		<url-pattern>/servlet/*</url-pattern>
+	 </servlet-mapping>
+
+	
+	<taglib>
+		<taglib-uri>http://jakarta.apache.org/taglibs/session-1.0</taglib-uri>
+		<taglib-location>/WEB-INF/jsp/session.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://jakarta.apache.org/taglibs/request-1.0</taglib-uri>
+		<taglib-location>/WEB-INF/jsp/request.tld</taglib-location>
+	</taglib>
+	<taglib>
+		<taglib-uri>http://www.careerlauncher.com/cl_taglib</taglib-uri>
+		<taglib-location>/WEB-INF/jsp/cl_taglib.tld</taglib-location>
+	</taglib>  
+</web-app>
+
+ 

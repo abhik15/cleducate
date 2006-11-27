@@ -1,0 +1,51 @@
+/* 
+   Styles for scrolling layers  
+	 Specify width and height in hold and wn, and in clip for wn 
+*/
+div#hold	{
+	position:relative;
+	overflow:visible;
+	width: 430px;
+	height: 518px;
+	}
+div#wn	{ 
+	position:absolute; 
+	left:-16px; top:-14px; 
+	width:496px; height:504px; 
+	clip:rect(0px, 280px, 200px, 0px); 
+	overflow:hidden;	
+	z-index:1; 
+	}
+div.content {
+	position:absolute;
+	left:1px;
+	top:-1px;
+	z-index:1;
+	width: 493px;
+	height: 300px;
+	}
+
+/* Set small font-size or size/position of div's will be off in some browsers  */
+div#scrollbar { 
+  position:relative; left:0; top:0;
+  width:5px; height:120px; 
+  font-size:1px; z-index:1;
+  }
+div#track {
+	position:absolute;
+	left:810px;
+	top:98px;
+	width:5px;
+	height:349px;
+/*	background: url("images/track.gif") ;*/
+	z-index:1;
+/*	background-color: #236;*/
+  }
+div#dragBar {
+  position:absolute; left:1px; top:1px;
+  width:8px; height:8px;
+  background-color:#990000;
+  z-index:1;
+  }  
+div#up { position:absolute; left:0; top:0; z-index:2 }  
+div#down { position:absolute; left:0; bottom:0; z-index:3 }  

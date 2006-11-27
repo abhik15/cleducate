@@ -1,0 +1,44 @@
+<html>
+<link rel="stylesheet" href="/styles/ananda.css" type="text/css">
+<script LANGUAGE="JavaScript" src="/jscript/cl_functions.js"></script>
+<SCRIPT LANGUAGE="JavaScript" SRC="/jscript/calendar.js"></SCRIPT>
+<body>
+<script language="JavaScript"> 
+<!-- 
+function validFunc()
+{
+	if(ChkBlank("form2.startDate","Please enter Start Date.") == false) return false;
+	if(ChkBlank("form2.endDate","Please enter End Date.") == false) return false;
+	if(validateDates("form2.startDate","Please enter valid Start Date.") == false) return false;
+	if(validateDates("form2.endDate","Please enter valid End Date.") == false) return false;
+}
+//-->
+</script>
+<img src=/img/ananda_logo.jpg><br><br>
+<form action="formHandler.jsp" method="post" name="form2">
+<div align=center>
+<table WIDTH="40%" cellspacing="0" cellpadding="3" border="1" bordercolorlight="#5E5E5D" bordercolordark="#ffffff" class="runningtext">
+<tr><td align=center>
+<font class="runningtext">&nbsp;&nbsp;&nbsp;&nbsp;Start Date: <input type="text" name="startDate" CLASS=boxborder> 			<a  HREF="javascript:doNothing()" onClick="setDateField(document.form2.startDate,'today');top.newWin = window.open('/jscript/calendar.html','cal','dependent=yes,width=230,height=240,screenX=200,screenY=300,titlebar=no')">
+			<img src="/img/cal.gif" alt="Click on the calendar icon to enter the date." width="18" height="18" align="absmiddle" border=0></a>
+</td></tr>
+<tr><td align=center>
+<font class="runningtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Date:    <input type="text" name="endDate" CLASS=boxborder> <a  HREF="javascript:doNothing()" onClick="setDateField(document.form2.endDate,'today');top.newWin = window.open('/jscript/calendar.html','cal','dependent=yes,width=230,height=240,screenX=200,screenY=300,titlebar=no')">
+			<img src="/img/cal.gif" alt="Click on the calendar icon to enter the date." width="18" height="18" align="absmiddle" border=0></a>
+</td></tr>
+<tr><td align=center>
+<font class="runningtext">Select a Location:
+<select name="locationId" CLASS=boxborder>
+  <option value="2">Ananda - Hyderabad:Sainik Puri</option> 
+  <option value="4">Ananda - Indore:Sai Kirpa Colony</option> 
+   <option value="1">Indus - Hyderabad:Sainik Puri</option> 
+  <option value="3">Indus - Indore:Sai Kirpa Colony</option> 
+</select>
+</td></tr>
+<tr><td align=center><input type="submit" value="submit" CLASS=inpBrd onClick="return validFunc()">
+</td></tr>
+</table>
+</div>
+</form>
+</body>
+</html>

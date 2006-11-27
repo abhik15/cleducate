@@ -1,0 +1,169 @@
+<style type="text/css">
+
+.slideshow{ /*CSS for DIV containing each image*/
+float: left;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+.slideshow img{ /*CSS for each image tag*/
+border: 0;
+width: 200px;
+height: 106px;
+}
+
+#navlinks{ /*CSS for DIV containing the navigational links*/
+width: 400px;
+}
+
+#navlinks a{ /*CSS for each navigational link*/
+margin-right: 8px;
+margin-bottom: 3px;
+font-size: 110%;
+}
+
+#navlinks a.current{ /*CSS for currently selected navigational link*/
+background-color: yellow;
+}
+</style>
+<html>
+<head>
+
+
+<style type="text/css">
+
+.slideshow{ /*CSS for DIV containing each image*/
+float: left;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+.slideshow img{ /*CSS for each image tag*/
+border: 0;
+width: 200px;
+height: 106px;
+}
+
+#navlinks{ /*CSS for DIV containing the navigational links*/
+width: 400px;
+}
+
+#navlinks a{ /*CSS for each navigational link*/
+margin-right: 8px;
+margin-bottom: 3px;
+font-size: 110%;
+}
+
+#navlinks a.current{ /*CSS for currently selected navigational link*/
+background-color: yellow;
+}
+</style>
+
+</head>
+
+<body>
+<script src="http://www.indusworldschool.com/sis/student_img/getpics.php" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+/***********************************************
+* PHP Photo Album script- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+* This notice must stay intact for legal use
+***********************************************/
+
+var dimension="4x2" //Specify dimension of gallery (number of images shown), such as 4x2, 3x1 etc
+var imagepath="http://www.indusworldschool.com/sis/student_img/group_photo/3/" //Absolute path to image directory. Include trailing slash (/)
+var href_target="new" //Enter target attribute of links, if applicable
+
+//Toggle popup link setting: popupsetting[0 or 1, "pop up window attributes" (if 1)]
+var popupsetting=[1, "width=500px, height=400px, scrollbars, resizable"]
+
+//Toggle image description: descriptionprefix[0 or 1, "Text to show" (if 1)]
+var descriptionprefix=[1, "Photo "]
+
+//Sort images by date? ("asc", "desc", or "")
+//"desc" for example causes the newest images to show up first in the gallery
+//"" disables this feature, so images are sorted by file name (default)
+var gsortorder="desc"
+
+//By default, each image hyperlinks to itself.
+//However, if you wish them to link to larger versions of themselves
+//Specify the directory in which the larger images are located
+//The file names of these large images should mirror those of the original
+//Enter a blank string ("") to disable this option
+var targetlinkdir="http://www.mysite.com/largegallery/"
+
+/////No need to edit beyond here///////////////////
+
+function sortbydate(a, b){ //Sort images function
+if (gsortorder=="asc") //sort by file date: older to newer
+return new Date(a[1])-new Date(b[1])
+else if (gsortorder=="desc") //sort by file date: newer to older
+return new Date(b[1])-new Date(a[1])
+}
+
+if (gsortorder=="asc" || gsortorder=="desc")
+galleryarray.sort(sortbydate)
+
+var totalslots=dimension.split("x")[0]*dimension.split("x")[1]
+
+function buildimage(i){
+var imagecompletepath=(targetlinkdir!="")? targetlinkdir+galleryarray[i][0] : imagepath+galleryarray[i][0]
+var tempcontainer='<a href="'+imagecompletepath+'" target="'+href_target+'" onClick="return popuplinkfunc(this)">'
+tempcontainer+='<img src="'+imagepath+galleryarray[i][0]+'" title="'+galleryarray[i][0]+' ['+galleryarray[i][1]+']" />'
+tempcontainer+='</a><br />'
+tempcontainer+=(descriptionprefix[0]==1)? descriptionprefix[1]+(i+1) : ""
+return tempcontainer
+}
+
+function jumptopage(p){
+var startpoint=(p-1)*totalslots
+var y=1;
+for (i=0; i<totalslots; i++){
+document.getElementById("slide"+i).innerHTML=(typeof galleryarray[startpoint+i]!="undefined")? buildimage(startpoint+i) : ""
+}
+while(document.getElementById("navlink"+y)!=null){
+document.getElementById("navlink"+y).className=""
+y++
+}
+document.getElementById("navlink"+p).className="current"
+}
+
+var curimage=0
+for (y=0; y<dimension.split("x")[1]; y++){
+for (x=0; x<dimension.split("x")[0]; x++){
+if (curimage<galleryarray.length)
+document.write('<div id="slide'+curimage+'" class="slideshow">'+buildimage(curimage)+'</div>')
+curimage++
+}
+document.write('<br style="clear: left" />')
+}
+
+function popuplinkfunc(imgsrc){
+if (popupsetting[0]==1){
+var popwin=open(imgsrc.href, "popwin", popupsetting[1])
+popwin.focus()
+return false
+}
+else
+return true
+}
+
+</script>
+
+<!--Below HTML code refers to the navigational links for the gallery-->
+
+<div id="navlinks">
+<script type="text/javascript">
+for (i=1; i<Math.ceil(galleryarray.length/totalslots)+1; i++)
+document.write('<a id="navlink'+i+'" href="javascript:jumptopage('+i+')\">Page'+i+'</a> ')
+document.getElementById("navlink1").className="current"
+</script>
+</div>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+	"http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>JavaMailTags</shortname>
+  <uri>http://www.jspinsider.com</uri>
+  <info>
+	A unofficial tag library for using Sun's JavaMail API. This taglibrary 
+        focuses only on supporting the JavaMail API 100%.
+  </info>
+
+  <tag>
+    <name>mimeMessage</name>
+    <tagclass>com.jspinsider.jspkit.javamail.JavaMailMimeMessageTag</tagclass>
+    <info>Represents a MimeMessage from the JavaMail API.</info>
+    <attribute>
+        <name>server</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>recipient</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>from</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>subject</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>text</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>bodyPart</name>
+    <tagclass>com.jspinsider.jspkit.javamail.JavaMailMimeBodyPartTag</tagclass>
+    <info>Adds a MimeBodyPart to your message.</info>
+    <attribute>
+        <name>uri</name>
+        <required>false</required>
+    </attribute>
+    <attribute>
+        <name>type</name>
+        <required>true</required>
+    </attribute>
+    <attribute>
+        <name>content</name>
+        <required>false</required>
+    </attribute>
+  </tag>
+  <tag>
+    <name>text</name>
+    <tagclass>com.jspinsider.jspkit.javamail.JavaMailMimeMessageTextTag</tagclass>
+    <info>Sets the body text for your JavaMailMimeMessageTag.</info>
+  </tag>
+  <tag>
+    <name>recipient</name>
+    <tagclass>com.jspinsider.jspkit.javamail.JavaMailMimeMessageRecipientTag</tagclass>
+    <info>Adds a recipient for a JavaMailMimeMessageTag.</info>
+    <attribute>
+        <name>type</name>
+        <required>false</required>
+    </attribute>
+  </tag>
+</taglib>
+

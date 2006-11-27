@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+	"http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>cl_taglib</short-name>
+	<uri>www.careerlauncher.com</uri>
+	<description>
+		This tag lib contains tag that return data which is common across different pages
+	</description>
+
+	<tag>
+		<name>productCategory</name>
+		<tag-class>com.cl.taglib.ProductCategoryTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates the product category and product listbox.
+		</description>
+		<attribute>
+			<name>category</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>product</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>productCategory</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>htmlType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>actionTitle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>selectedCategory</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>selectedProduct</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<name>writeChannels</name>
+		<tag-class>com.cl.taglib.WriteChannelsTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+		This tag displays the channels to which the user has write access.
+		</description>
+		<attribute>
+			<name>agentID</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>destID</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>clSource</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sisSource</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>connObj</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLGrpObjTest</name>
+		<tag-class>com.cl.taglib.CLGrpObjTestTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Group Objective Test.
+		</description>
+		<attribute>
+			<name>runId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>userId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>commaDelimQids</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>randomId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>gradeId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>subjectId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>subjectName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>chapterId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>tact</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLZoneAccessTag</name>
+		<tag-class>com.cl.taglib.CLZoneAccessTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Group Objective Test.
+		</description>
+	</tag>
+
+	<tag>
+		<name>CLValidateSessionTag</name>
+		<tag-class>com.cl.taglib.CLValidateSessionTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Group Objective Test.
+		</description>
+		<attribute>
+			<name>userType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+		<attribute>
+			<name>target</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<name>CLMsgSisLeftBandTag</name>
+		<tag-class>com.cl.taglib.CLMsgSisLeftBandTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates the Left Links band for CLMS/CLZone and SIS.
+		</description>
+		<attribute>
+			<name>category</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>used to determine whether the user is an employee or a customer/student</description>
+		</attribute>
+		<attribute>
+			<name>level</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Presently being used mainly for SIS - denotes the level of navigation</description>
+		</attribute>
+		<attribute>
+			<name>connObj</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<name>MessageBoxTag</name>
+		<tag-class>com.cl.taglib.CLMSMessageBoxTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates the CLMS Message box.
+		</description>
+		<attribute>
+			<name>folderMessageCount</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>folderName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>folderId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>category</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>used to determine whether the user is an employee or a customer/student</description>
+		</attribute>
+		<attribute>
+			<name>cpage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>current page</description>
+		</attribute>
+		<attribute>
+			<name>rpage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>results per page</description>
+		</attribute>
+		<attribute>
+			<name>agentId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>agent id</description>
+		</attribute>
+		<attribute>
+			<name>destId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>destination id</description>
+		</attribute>
+		<attribute>
+			<name>msgArray</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>connObj</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>MessageBoxHeadTag</name>
+		<tag-class>com.cl.taglib.CLMSMessageBoxHeadTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates the CLMS Message box.
+		</description>
+		<attribute>
+			<name>folderMessageCount</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>folderName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>folderId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>category</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>used to determine whether the user is an employee or a customer/student</description>
+		</attribute>
+		<attribute>
+			<name>cpage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>current page</description>
+		</attribute>
+		<attribute>
+			<name>rpage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>results per page</description>
+		</attribute>
+		<attribute>
+			<name>agentId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>agent id</description>
+		</attribute>
+		<attribute>
+			<name>destId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>destination id</description>
+		</attribute>
+		<attribute>
+			<name>msgSeq</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<name>CLEStoreCategoryTag</name>
+		<tag-class>com.cl.taglib.CLEStoreCategoryTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays the sub categories for category id or displays the main categories.
+		</description>
+		<attribute>
+			<name>categoryId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLEStoreUserAccTag</name>
+		<tag-class>com.cl.taglib.CLEStoreUserAccTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays the user account info on the left navigation.
+		</description>
+		<attribute>
+			<name>categoryId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>CLEStoreStarProdTag</name>
+		<tag-class>com.cl.taglib.CLEStoreStarProdTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays the star products.
+		</description>
+	</tag>
+
+	<tag>
+		<name>CLEStoreDispProdTag</name>
+		<tag-class>com.cl.taglib.CLEStoreDispProdTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays the products for a perticular category.
+		</description>
+		<attribute>
+			<name>categoryId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLEStoreDispUsrCartTag</name>
+		<tag-class>com.cl.taglib.CLEStoreDispUsrCartTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays user cart.
+		</description>
+		<attribute>
+			<name>dispMode</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>categoryId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>stage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLDispUserAddTag</name>
+		<tag-class>com.cl.taglib.CLDispUserAddTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays user address for confirmation.
+		</description>
+		<attribute>
+			<name>stage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLEStoreDispUsrProdTag</name>
+		<tag-class>com.cl.taglib.CLEStoreDispUsrProdTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays user address for confirmation.
+		</description>
+		<attribute>
+			<name>tranId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<name>SISAnalysisLevel2Tag</name>
+		<tag-class>com.cl.taglib.SISAnalysisLevel2Tag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag displays the second level navigation band for sis analysis
+		</description>
+		<attribute>
+			<name>testID</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>qsetID</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabledLink</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLEnrollCollection</name>
+		<tag-class>com.cl.taglib.CLEnrollCollection</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Enroll count.
+		</description>
+		<attribute>
+			<name>locIds</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>prodIds</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>date1</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>date2</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>repType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageNo</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLEnrollCount</name>
+		<tag-class>com.cl.taglib.CLEnrollCount</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Enroll count.
+		</description>
+		<attribute>
+			<name>locIds</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>prodIds</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>date1</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>date2</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>repType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageNo</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>CLEnrollDetail</name>
+		<tag-class>com.cl.taglib.CLEnrolmentsDetail</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Enrollment Details.
+		</description>
+		<attribute>
+			<name>locIds</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>prodIds</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>date1</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>date2</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>repType</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locWise</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>prodWise</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>CLERPReceiptPrintTag</name>
+		<tag-class>com.cl.taglib.CLERPReceiptPrintTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Enrollment Details.
+		</description>
+		<attribute>
+			<name>rid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>empid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>help</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageno</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<name>CLERPReceiptPrintVerificationTag</name>
+		<tag-class>com.cl.taglib.CLERPReceiptPrintVerificationTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Enrollment Details.
+		</description>
+		<attribute>
+			<name>locid</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLEnquiryHistFollowup</name>
+		<tag-class>com.cl.taglib.CLEnquiryFollowupHistTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Enquiry Followup History Details.
+		</description>
+		<attribute>
+			<name>enqid</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLFinanceLinksTag</name>
+		<tag-class>com.cl.taglib.CLFinanceLinksTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Finance Related Links.
+		</description>
+		<attribute>
+			<name>rid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>empid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>help</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>CLOperationLinksTag</name>
+		<tag-class>com.cl.taglib.CLOperationLinksTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			This tag generates and displays the Operations Related Links.
+		</description>
+		<attribute>
+			<name>rid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>locid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>empid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>help</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+
+
+
+
+
+</taglib>

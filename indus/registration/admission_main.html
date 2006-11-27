@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<SCRIPT LANGUAGE="JavaScript" src="/jscript/cl_functions.js"></script>
+
+<SCRIPT LANGUAGE="JavaScript">
+	var citynames = new Array('HYDERABAD','INDORE')
+	var cityids = new Array('1','3')
+	var centernames = new Array('Sainikpuri, Hyderabad','Sai Kripa Colony, Indore')
+	var centerids = new Array('1','3')
+	var citycenterids = new Array('1','3')
+
+	var cityvalue = 1
+	var centervalue = 1
+
+	function selectCity()
+	{
+		cityvalue = document.form1.city.value
+		changeCenter(cityvalue)
+	}
+
+	function changeCenter(cityvalue)
+	{
+		var x=0
+		var temp = new Array()
+		for(i=0;i<citycenterids.length;i++)
+		{
+			if(cityvalue==citycenterids[i])
+				{
+					temp[x] = i
+					x++			
+				}
+		}
+		document.form1.center.length=x
+		for(i=0;i<x;i++)
+		{
+			document.form1.center.options[i].value=centerids[temp[i]]
+		}
+		for(i=0;i<x;i++)
+		{
+			document.form1.center.options[i].text=centernames[temp[i]]
+		}
+	}
+	
+	function init(){
+		document.form1.action = "/location/"+cityvalue+"/admission.html";
+
+	}
+	
+</SCRIPT>
+<title>Admission</title>
+
+<link href="/styles/indus.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.sub_admission {	font-family: "Arial";
+	font-size: 11.7pt;
+	color:#5E93A4;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td ></td>
+    <td align="center" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="780" height="79">
+        <param name="movie" value="/swf/main_topband.swf" />
+        <param name="quality" value="high" />
+        <embed src="/swf/main_topband.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="780" height="79"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td ></td>
+    <td height="3" ></td>
+  </tr>
+  <tr valign="top">
+    <td width="1" align="left" bgcolor="#999999"><img src="/img/1x1.gif" width="1" height="1" /></td>
+    <td height="25" align="left" bgcolor="#86CF18"><img src="/img/admission_landing.gif" width="780" height="25" border="0" usemap="#Map" /></td>
+    <td bgcolor="#999999" align="left"><img src="/img/1x1.gif" width="1" height="1" /></td>
+  </tr>
+  <tr valign="top">
+    <td width="1" align="left" bgcolor="#999999"></td>
+    <td align="left">&nbsp;</td>
+    <td width="1" bgcolor="#999999" align="left"></td>
+  </tr>
+  <tr valign="top">
+    <td width="1" align="left" bgcolor="#999999"></td>
+    <td align="left"><table width="95%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="12%" valign="top">&nbsp;</td>
+        <td valign="top" align="left" width="88%"><font class="runningtext"><span class="sub_admission">Registration Information</span><br />
+            <br />
+            <font class="runningtext"><strong>Dear Parent,</strong><br />
+Welcome to Indus World School. Admissions are currently open for Classes 1 to  6. <br />
+<br />
+Your child will be selected for admission subject to the availability of seats and the fulfilling of the admission norms. Generally speaking, these norms are based on the distance that your child will have to commute from home to school.<br/>
+<br/>
+The School management would like to interact with both parents and the child to enable us to understand each others aspirations and goals. We prefer to interact in an informal environment at your home and will be in touch to fix a time suitable to you.<br />
+<br/>
+            </font></font>
+          <table width="96%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="left" valign="top"><font class="runningtext">Select your city in the box below to find the centre closest to you, and what   courses are on offer there.</font>
+                  <form method="post" name="form1" id="form1">
+                    <table width="93%" border="0" cellspacing="3" cellpadding="0">
+                      <tr>
+                        <td width="20%" align="left" valign="top"><font class="runningtext"><strong>City :</strong></font></td>
+                        <td align="left" valign="top"><select name="city" onchange="selectCity()" class="boxborder">
+                            <script language="JavaScript" type="text/javascript"><!--
+
+	for(i=0;i<citynames.length;i++)
+	{
+			document.write("<option value = " +cityids[i]+ ">" + citynames[i])
+	}
+
+//-->
+              </script>
+                        </select></td>
+                      </tr>
+                      <tr>
+                        <td height="8" align="left" valign="top"></td>
+                        <td align="left" valign="top"></td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top"><font class="runningtext"><strong>School Branch  :</strong></font></td>
+                        <td align="left" valign="top"><select name="center" class="boxborder">
+                            <script language="JavaScript" type="text/javascript"> <!--
+	for(i=0;i<centernames.length;i++)
+	{
+			if(cityvalue==citycenterids[i])
+			{	
+				document.write("<option value = " +centerids[i]+ ">" + centernames[i])
+			}
+	}
+
+//--></script>
+                        </select></td>
+                      </tr>
+                      <tr>
+                        <td height="8" align="left" valign="top"></td>
+                        <td align="left" valign="top"></td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">&nbsp;</td>
+                        <td align="left" valign="top"><input name="submit" type="submit" class="boxborder" value=" Submit " onclick= "init()"/></td>
+                      </tr>
+                    </table>
+                  </form></td>
+            </tr>
+          </table>          </td>
+      </tr>
+      <tr>
+        <td width="12%">&nbsp;</td>
+        <td valign="top" align="left" width="88%">&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="1" bgcolor="#999999" align="left"></td>
+  </tr>
+  <tr valign="top" align="left">
+    <td bgcolor="#999999"></td>
+    <td bgcolor="#999999" height="1"><table width="780" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ABD751">
+      <tr>
+        <td><table width="300" border="0" align="right" cellpadding="0" cellspacing="0" bordercolor="#000000">
+            <tr>
+              <td width="78" align="center" valign="middle"><a href="javascript:NewWindow=window.open('/htmls/aboutus.html','newWin','width=500,height=200,left=300,top=300, toolbar=No,location=No,scrollbars=No,status=No,resizable=No,fullscreen=No'); NewWindow.focus(); void(0);" class="nav_link_curriculum"> <font class="nav_link_curriculum">About us </font></a></td>
+              <td width="91" align="center" valign="middle"><a href="javascript:NewWindow=window.open('/htmls/contactus.html','newWin','width=450,height=200,left=200,top=200, toolbar=No,location=No,scrollbars=No,status=No,resizable=No,fullscreen=No'); NewWindow.focus(); void(0);" class="nav_link_curriculum"> <font class="nav_link_curriculum">Contact us </font></a></td>
+              <td width="60" align="center" valign="middle"><font class="nav_link_curriculum">Careers</font></td>
+              <td width="47" align="center" valign="middle"><font class="nav_link"><a href="/index.html" target="_parent" class="nav_link_curriculum">Home</a></font></td>
+              <td width="3%" align="center" valign="middle">&nbsp;</td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+    <td bgcolor="#999999"></td>
+  </tr>
+  <tr valign="top" align="left">
+    <td bgcolor="#999999"></td>
+    <td bgcolor="#999999" height="1"><table width="1" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ABD751">
+      <tr>
+        <td width="1" align="left" valign="top" bgcolor="#999999"></td>
+        </tr>
+    </table></td>
+    <td width="1" bgcolor="#999999"></td>
+  </tr>
+</table>
+<map name="Map" id="Map">
+  <area shape="rect" coords="21,1,121,24" href="/registration/registration_form_download.pdf"/>
+</map></body>
+</html>
