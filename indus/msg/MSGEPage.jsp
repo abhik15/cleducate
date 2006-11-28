@@ -3,6 +3,7 @@
   -- Author:     Shilpa Arora
   -- Create Date:24th April 2002 
   --%>
+  <%@ page import="java.io.*"%>
 
 <%
 String logFile=application.getRealPath("/logs/error/")+"MSGErrorLog.log";
