@@ -1,3 +1,9 @@
+<!--
+	*Created by Amrendra Kumar
+	*Date of Creation: 27-11-06
+	*This page is called from SISselectlogin.jsp for updation of username and password.	
+-->
+
 <%@ page import="java.io.*, java.sql.*, java.util.Date, oracle.jdbc.driver.*, com.cl.sql.PoolManager, org.apache.log4j.*" errorPage="/epage/anandaError.jsp" buffer="none"%> 
 
 <%

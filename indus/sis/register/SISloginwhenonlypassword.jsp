@@ -1,3 +1,5 @@
+
+
 <%@ page import="java.sql.*,java.util.*,oracle.jdbc.driver.*,com.cl.sql.PoolManager,org.apache.log4j.*" errorPage="/epage/anandaError.jsp" %>
 
 <html>
@@ -38,7 +40,7 @@
         
         <tr> 
           <td width="8">&nbsp;</td>
-          <td class="headblubld" height="34" valign="center">Proceed for SIS&nbsp;&nbsp;&nbsp;<img src="/img/arrow.gif" align="absmiddle"></td>
+          <td class="headblubld" height="34" valign="center">Proceed for SIS</td>
         </tr>
         
       </table>
@@ -93,12 +95,7 @@ try
 	int tempuid = call.getInt(3);
 	if(tempuid > 0)
 	{
-		call1=connection.prepareCall("{call ERP.ERP_USER_PKG.CHECK_CUSTOMER(?,?)}");
-		call1.setInt(1,tempuid);
-		call1.registerOutParameter(2,OracleTypes.NUMBER);
-		call1.execute();
-		int tempcustid = call1.getInt(2);
-		customerid = tempcustid+"";
+		
 			
 %>
 

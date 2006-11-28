@@ -1,3 +1,10 @@
+<!--
+	*Created by Amrendra Kumar
+	*Date of Creation: 27-11-06
+	*This page is used for to retrieve his current password if he forgot his password.
+	
+-->
+
 <%@ page import="java.io.*,java.sql.*,java.util.*,oracle.jdbc.driver.*,com.cl.sql.PoolManager" errorPage="/epage/anandaError.jsp"%>
 <html><head>
 	<link href="/styles/indus.css" rel="stylesheet" type="text/css" /> 

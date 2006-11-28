@@ -1,3 +1,11 @@
+<!--
+	*Created by Amrendra Kumar
+	*Date of Creation: 27-11-06
+	*This page is used for select his username and password if
+	his user name is system generated.
+	
+-->
+
 <%@ page import="java.sql.*, java.util.*, com.cl.sql.PoolManager,oracle.jdbc.driver.*, org.apache.log4j.*" %> 
 <%
 	Connection connection = null;
