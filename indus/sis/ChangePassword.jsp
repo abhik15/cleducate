@@ -1,3 +1,12 @@
+<!--
+	*Created by Amrendra Kumar
+	*Date of Creation: 27-11-06
+	*This page is used for change his current password.
+	*On submission of this page is called from Changepwd.jsp 
+	and after updation of his password he get the confirmation message.
+	
+-->
+
 <%@ page import="java.io.*,java.sql.*,java.util.*,oracle.jdbc.driver.*,com.cl.sql.PoolManager,org.apache.log4j.*" %>
 <%@ taglib uri="http://www.careerlauncher.com/cl_taglib" prefix="cl" %>
 <cl:CLValidateSessionTag userType="CUSTOMER"/>
@@ -58,7 +67,7 @@
 	ResultSet identification=null;
 	Category logCategory = Category.getInstance("indus.sis.changepwd");
 
-	String login=session.getAttribute("uid").toString();
+	String login=request.getParameter("login");
 	String oldpassword=request.getParameter("oldpassword");
 	String newpassword=request.getParameter("newpassword");
 	String confirmNewPwd = request.getParameter("confirmnewpassword");
@@ -90,9 +99,9 @@
 		{
 
 			call=connection.prepareCall("{CALL SIS_PKG.CHANGE_PASSWORD(?,?,?)}");
-			call.setString(1,login);
-			call.setString(2,oldpassword);
-			call.setString(3,newpassword);
+			call.setString(1,login);			
+			call.setString(2,newpassword);
+			call.setString(3,oldpassword);
 			call.execute();
 			connection.commit();
 			out.println();

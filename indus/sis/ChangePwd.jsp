@@ -1,3 +1,12 @@
+<!--
+	*Created by Amrendra Kumar
+	*Date of Creation: 27-11-06
+	*This page is used for change his current password.
+	*On submission of this page Changepassword.jsp is called on that page
+	sis_pkg.change_password procedure is called by which password is updated
+	if user name and old password is correct.
+	
+-->
 <html>
 <head>
 <title>Change password</title>
@@ -104,12 +113,12 @@ function validate(form)
     </td>
   </tr>
   <tr> 
-    <td bgcolor="BACFE5"> 
+    <td bgcolor="B4BC6D"> 
       <table border="0" cellspacing="0" cellpadding="0">
         
         <tr> 
           <td width="8">&nbsp;</td>
-          <td class="headblubld" height="34" valign="center">Change password&nbsp;&nbsp;&nbsp;></td>
+          <td class="headblubld" height="34" valign="center">Change password</td>
         </tr>
         
       </table>
