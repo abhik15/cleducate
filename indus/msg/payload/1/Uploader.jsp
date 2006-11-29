@@ -40,9 +40,6 @@ String logFile=application.getRealPath("/logs/error/")+"MSGErrorLog.log";
 
 	<jsp:useBean id="agent" class="com.cl.msg.MSGAgent" scope="session" />
 	<jsp:setProperty name="agent" property="errorFileName" value="<%=logFile %>"/>
-	<jsp:useBean id="Systems" scope="application" class="com.cl.CLSystems"/>
-	
-	
 	<jsp:useBean id="queues" class="com.cl.msg.MSGQueues" scope="application" />
 	<jsp:setProperty name="queues" property="errorFileName" value="<%=logFile %>"/>
 	<jsp:useBean id="msg" class="com.cl.msg.MSGMessage" scope="session" />
