@@ -26,7 +26,7 @@
 String logFile=application.getRealPath("/logs/error/")+"MSGErrorLog.log";
 %>
 
-<%@ page import="com.cl.msg.*,java.sql.Connection,com.cl.sql.CLMSPoolManager"  errorPage="/msg/MSGEPage.jsp"%>
+<%@ page import="com.cl.msg.*,java.sql.Connection,com.cl.sql.PoolManager"  %>
 <jsp:useBean id="queues" class="com.cl.msg.MSGQueues" scope="application" />
 <jsp:setProperty name="queues" property="errorFileName" value="<%=logFile %>"/>
 
@@ -333,7 +333,7 @@ else{
 
 <p class="cnt" style="line-height: 180%">To send a message to all the members of any location, please choose the location by clicking the checkbox. To choose/see the members of a particular location click on the <input type="button" value="+" class="cnt"> button given with the location and to hide the members click on the button again.</p>
 <%
-	CLMSPoolManager clmsPool = CLMSPoolManager.getInstance();
+	PoolManager clmsPool = PoolManager.getInstance();
 	Connection conn = null;
 	try
 	{
@@ -399,7 +399,7 @@ else{
 					//if this part of node is to be expanded
 					if(expanded.indexOf("|"+reservedWords[i]+"|")>-1)
 						{
-						agents= queues.getRecepients(qID, 1,"|"+makeLocationString(queues.getLocationIDs(conn,reservedWords[i]))+"|");
+						agents= queues.getRecepients(conn,qID, 1,"|"+makeLocationString(queues.getLocationIDs(conn,reservedWords[i]))+"|");
 						if(agents!=null && agents.length>0)
 							{
 							%>
