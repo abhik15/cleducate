@@ -5,7 +5,7 @@
      -- 2) The attachment files makes the total filesize limit exceeding 1 MB
 --%>
 
-<%@ page import="java.sql.*,com.cl.msg.*,java.math.*,java.io.*" %>
+<%@ page import="java.sql.*,com.cl.msg.*,java.math.*,java.io.*" errorPage="/msg/MSGErrorPage.jsp"%>
 <%@ page import = "java.util.*,com.oreilly.servlet.*,com.oreilly.servlet.multipart.*"%>
 
 <%@ taglib uri="http://www.careerlauncher.com/cl_taglib" prefix="cl"%>
@@ -17,7 +17,7 @@
 
 	<jsp:useBean id="agent" class="com.cl.msg.MSGAgent" scope="session" />
 	<jsp:setProperty name="agent" property="errorFileName" value="<%=logFile %>"/>
-	<jsp:useBean id="Systems" scope="application" class="com.cl.CLSystems"/>
+
 	<jsp:useBean id="queues" class="com.cl.msg.MSGQueues" scope="application" />
 	<jsp:setProperty name="queues" property="errorFileName" value="<%=logFile %>"/>
 	<jsp:useBean id="msg" class="com.cl.msg.MSGMessage" scope="session" />

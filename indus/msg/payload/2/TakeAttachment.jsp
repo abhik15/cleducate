@@ -1,4 +1,4 @@
-<%@ page import="java.sql.Connection,com.cl.sql.CLMSPoolManager"  errorPage="/msg/MSGErrorPage.jsp"%>
+<%@ page import="java.sql.Connection,com.cl.sql.PoolManager"  errorPage="/msg/MSGErrorPage.jsp"%>
 <%@ taglib uri="http://www.careerlauncher.com/cl_taglib" prefix="cl"%>
 <%--
   -- Filename:	 TakeAttachment.jsp
@@ -83,7 +83,7 @@
 
 	<jsp:useBean id="agent" class="com.cl.msg.MSGAgent" scope="session" />
 	<jsp:setProperty name="agent" property="errorFileName" value="<%=logFile %>"/>
-	<jsp:useBean id="Systems" scope="application" class="com.cl.CLSystems"/>
+
 	<jsp:useBean id="inbox" class="com.cl.msg.MSGInbox" scope="page" />
 	<jsp:setProperty name="inbox" property="errorFileName" value="<%=logFile %>"/>
 	<jsp:useBean id="queues" class="com.cl.msg.MSGQueues" scope="application" />
@@ -151,7 +151,7 @@
 String clSrc = (cat==1) ? "/msg/MSGStaffCompose.jsp" : "/msg/MSGStudentCompose.jsp";
 String attachedFiles[] = w2payload.getAttachedFiles();
 
-	CLMSPoolManager clmsPool = CLMSPoolManager.getInstance();
+	PoolManager clmsPool = PoolManager.getInstance();
 	Connection conn = null;
 		java.io.File file = null;
 		int size = 0;
