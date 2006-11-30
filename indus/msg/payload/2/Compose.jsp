@@ -18,7 +18,7 @@ String logFile=application.getRealPath("/logs/error/")+"MSGErrorLog.log";
 	boolean reply=false;
 	boolean fwd=false;
 	int msgID=0;
-	int payloadID=1;
+	int payloadID=2;
 try
 {
 	reply= request.getParameter("reply")!=null?request.getParameter("reply").equalsIgnoreCase("y")? true:false:false;

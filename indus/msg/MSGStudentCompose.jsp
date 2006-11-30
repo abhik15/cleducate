@@ -1,4 +1,4 @@
-<%@ page import="java.sql.Connection,com.cl.sql.PoolManager"%>
+<%@ page import="java.sql.*,com.cl.sql.PoolManager,oracle.jdbc.driver.*"%>
 <%@ taglib uri="http://www.careerlauncher.com/cl_taglib" prefix="cl" %>
 
 <%--
@@ -12,7 +12,9 @@
 	int payloadID = 0;
 	try
 	{
-		payloadID = Integer.parseInt(request.getParameter("pid"));
+//		payloadID = Integer.parseInt(request.getParameter("pid"));
+		payloadID= 2;
+System.out.println("PayloadId is " + payloadID);
 	}
 	catch(NumberFormatException nfe)
 	{
@@ -81,7 +83,8 @@
 			receiver="";
 		try
 		{
-			qID = Integer.parseInt(request.getParameter("qid"));
+//			qID = Integer.parseInt(request.getParameter("qid"));
+			qID = 1;
 			reply = (request.getParameter("reply") != null)
 						? request.getParameter("reply").equalsIgnoreCase("y") ? true : false 
 						: false;
@@ -197,7 +200,7 @@
 				<td bgcolor="#C0D9F5" colspan="2" valign="top" align="left"> 
 					<form method="POST" action="/msg/payload/<%=payloadID %>/Send.jsp" name="payload" onSubmit="return validate(this)">
 					<input type="hidden" name="source" value="/msg/MSGStudentCompose.jsp" >	
-					<input type="hidden" name="cat" value="<%=cat %>" >	
+<!--					<input type="hidden" name="cat" value="<%=cat %>" >	-->
 					<!-- GREY BORDER TABLE START -->
 					<table width="98%" border="1" cellspacing="0" cellpadding="3" bordercolorlight="#999999" bordercolordark="#C0D9F5">
 						<tr><td bgcolor="#C0D9F5" valign="top" align="left"> 
@@ -251,13 +254,46 @@
 					}
 					else
 					{
+						CallableStatement call = null;
+						ResultSet rs = null;
+						try
+						{
+							call=conn.prepareCall("{CALL SIS_MSG.GET_SCHOOL_RECEIVERS(?,?)}");
+							call.setInt(1,agent.getAgentID());
+							call.registerOutParameter(2,OracleTypes.CURSOR);
+							call.execute();
+							rs=(ResultSet)call.getObject(2);
+/*							rs=st.executeQuery("SELECT DISTINCT B.AGENT_NAME FROM CL_EMPLOYEE A,MSG_AGENT B,MSG_Q_ACL C WHERE A.LOC_ID =(select service_loc_id from cl_enroll enroll, cl_cust_login login, msg_agent agent where enroll.cust_id = login.cust_id and login.user_id = agent.pk_value and agent.agent_id ="+agent.getAgentID()+") AND  A.EMP_ID = B.PK_VALUE AND B.AGENT_ID = C.AGENT_ID AND C.Q_ID = 10 ORDER BY AGENT_NAME");
+*/							
+						
 %>
 							<tr> 
 								<td><img src="/img/blank.gif" width="5" height="5"></td>
-								<td><font class="verbld"><a href="javascript:popup(<%=qID %>)">To</a></font></td>
-								<td><input type="text" name="receiver" value="<%=receiver %>"></td>
+								<!--<td><font class="verbld"><a href="javascript:popup(<%=qID %>)">To</a></font></td>-->
+								<TD font class="verbld">TO</TD>
+								<td><SELECT NAME="receiver">
+<%
+								while(rs.next())
+								{
+%>
+									<OPTION VALUE="<%=rs.getString("AGENT_NAME")%>"><%=rs.getString("AGENT_NAME")%></OPTION>
+<%
+								}
+%>
+								</SELECT></td>
+								<!--<td><input type="text" name="receiver" value="<%=receiver %>"></td>-->
 							</tr>
 <%
+						}
+						finally
+						{
+
+							try{
+								call.close();
+								rs.close();
+							}catch(Exception e)
+							{}
+						}
 					}//end of no location readers found
 				}
 				else 

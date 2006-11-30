@@ -1,4 +1,4 @@
-<%@ page import="java.io.File,java.sql.SQLException,java.sql.Connection,com.cl.sql.CLMSPoolManager,com.cl.msg.*,java.math.*,java.util.*,org.apache.log4j.*,com.cl.common.*,com.cl.msg.list.*" errorPage="/msg/MSGErrorPage.jsp"%>
+<%@ page import="java.io.File,java.sql.SQLException,java.sql.Connection,com.cl.sql.PoolManager,com.cl.msg.*,java.math.*,java.util.*,org.apache.log4j.*,com.cl.common.*,com.cl.msg.list.*" %>
 <%@ taglib uri="http://www.careerlauncher.com/cl_taglib" prefix="cl"%>
 
 <%--
@@ -28,7 +28,7 @@
 	<cl:CLValidateSessionTag userType="<%=user%>"/>
 	<jsp:useBean id="agent" class="com.cl.msg.MSGAgent" scope="session" />
 	<jsp:setProperty name="agent" property="errorFileName" value="<%=logFile %>"/>
-	<jsp:useBean id="Systems" scope="application" class="com.cl.CLSystems"/>
+
 	<jsp:useBean id="queues" class="com.cl.msg.MSGQueues" scope="application" />
 	<jsp:useBean id="book" class="com.cl.msg.list.MSGMemberBook" scope="page" />
 
@@ -93,7 +93,7 @@
 		{}
 
 
-		CLMSPoolManager clmsPool = CLMSPoolManager.getInstance();
+		PoolManager clmsPool = PoolManager.getInstance();
 		Connection conn = null;
 		try
 		{
