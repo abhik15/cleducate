@@ -47,10 +47,16 @@
 %>
 </td></tr>
 <%
-	for(int i=0; i<queueIDs.length; i++)
+/*	for(int i=0; i<queueIDs.length; i++)
 	{
 		queueMaster= queues.getQueue(queueIDs[i]);
 		out.println("<tr><td bgcolor=\"#C0D9F5\" width=\"10%\"><img src=\""+queueMaster.getIconURL()+" \"></td><td bgcolor=\"#C0D9F5\"><font class=\"cnt\"><a class=\"lnkblu\" href=\""+source+"?qid="+queueMaster.getQID()+"&pid="+queueMaster.getPayloadID()+"\">"+queueMaster.getQDescr()+"</a></font></td></tr>");	
 	}
+*/
+	queueMaster= queues.getQueue(queueIDs[0]);
+	out.println("<tr><td bgcolor=\"#C0D9F5\" width=\"10%\"><img src=\""+queueMaster.getIconURL()+" \"></td><td bgcolor=\"#C0D9F5\"><font class=\"cnt\"><a href=\"/msg/MSGStudentCompose.jsp?qid=1&pid=2\" class=\"lnkblu\">Contact Your Teacher</a></td></tr>");
+
+	queueMaster= queues.getQueue(queueIDs[1]);
+	out.println("<tr><td bgcolor=\"#C0D9F5\" width=\"10%\"><img src=\""+queueMaster.getIconURL()+" \"></td><td bgcolor=\"#C0D9F5\"><font class=\"cnt\"><a href=\"/msg/MSGStudentCompose.jsp?qid=28&pid=1\" class=\"lnkblu\">Principal's Desk</a></td></tr>");
 %>
 </table>

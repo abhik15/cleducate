@@ -279,6 +279,7 @@
 	<title>Sent Message Confirmation</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<link rel="stylesheet" href="/styles/style.css" type="text/css">
+	<link href="/styles/indus.css" rel="stylesheet" type="text/css" /> 
 	<script LANGUAGE="JavaScript" src="/msg/list/MSGBookJscript.js"></script>
 	<script language="javascript">
 	function hideIt(){
@@ -352,7 +353,7 @@
 	{
 		conn = clmsPool.getConnection("erp");
 %>
-	<tr valign="top"><td bgcolor="DFE1BC" width="21%" valign="top">
+	<tr valign="top"><td bgcolor="#999933" width="21%" valign="top">
 		<cl:CLMsgSisLeftBandTag connObj="<%=conn%>" category="<%=Integer.toString(cat)%>" level="1"/>
 	</td>
 
@@ -379,9 +380,9 @@
 
 	<table width="100%" cellpadding="3" cellspacing="0">
 	<tr><td><img src="/img/blank.gif" width="5" height="10"></td></tr>
-	<tr><td>
+	<!-- <tr><td>
 		<cl:writeChannels agentID="<%=agent.getAgentID() %>" destID="<%=agent.getDestID() %>" clSource="<%=clSrc%>" connObj="<%=conn%>" sisSource="/msg/admin/MSGPickStudents.jsp"/>
-	</td></tr>
+	</td></tr> -->
 <%
 		msg.setCreateStatus(reply?"REP":fwd?"FWD":"NEW");
 		//will hold the path where attachments will be saved before they are uploaded to the database.

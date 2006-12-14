@@ -269,6 +269,7 @@
 	<title>Sent Message Confirmation</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<link rel="stylesheet" href="/styles/style.css" type="text/css">
+	<link href="/styles/indus.css" rel="stylesheet" type="text/css" /> 
 	<script LANGUAGE="JavaScript" src="/msg/list/MSGBookJscript.js"></script>
 	<script language="javascript">
 	function hideIt(){
@@ -328,7 +329,7 @@
 
 	</script>
 	<!-- Add top.js for top band -->
-<link rel="stylesheet" href="/styles/style.css" type="text/css">
+	<link rel="stylesheet" href="/styles/style.css" type="text/css">
 	<link href="/styles/indus.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"  > 
@@ -361,9 +362,9 @@
 
 	<table width="100%" cellpadding="3" cellspacing="0">
 	<tr><td><img src="/img/blank.gif" width="5" height="10"></td></tr>
-	<tr><td>
+	<!-- <tr><td>
 		<cl:writeChannels agentID="<%=agent.getAgentID() %>" destID="<%=agent.getDestID() %>" clSource="<%=clSrc%>" connObj="<%=conn%>" sisSource="/msg/admin/MSGPickStudents.jsp"/>
-	</td></tr>
+	</td></tr> -->
 <%
 		msg.setCreateStatus(reply ? "REP" : fwd ? "FWD" : "NEW");
 		//will hold the path where attachments will be saved before they are uploaded to the database.
