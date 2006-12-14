@@ -227,9 +227,9 @@ String user = (cat == 0) ? "CUSTOMER" : "EMPLOYEE";
 	
 	<tr><td>
 		<table width="100%" cellspacing="0" cellpadding="0" bgcolor="#C0D9F5" border="0">
-		<tr><td colspan="2">
+		<!-- <tr><td colspan="2">
 			<cl:writeChannels agentID="<%=agent.getAgentID() %>" destID="<%=agent.getDestID() %>" clSource="<%=clSrc%>" connObj="<%=conn%>" sisSource="/msg/admin/MSGPickStudents.jsp"/>
-		</td></tr>
+		</td></tr> -->
 
 		<tr><td bgcolor="#ffffff" colspan="3"><img src="/img/blank.gif" height="5" width="5"></td></tr>
 
