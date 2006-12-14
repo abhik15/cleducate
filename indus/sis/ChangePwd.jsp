@@ -1,3 +1,6 @@
+<%@ page import="com.cl.sql.PoolManager,java.sql.Connection,com.cl.msg.*"%>
+<%@ taglib uri="http://www.careerlauncher.com/cl_taglib" prefix="cl" %>
+
 <!--
 	*Created by Amrendra Kumar
 	*Date of Creation: 27-11-06
@@ -7,11 +10,21 @@
 	if user name and old password is correct.
 	
 -->
+<%
+	PoolManager clmsPool = PoolManager.getInstance();
+	Connection conn = null;
+try
+{
+
+	conn = clmsPool.getConnection("erp");
+%>
+
 <html>
 <head>
 <title>Change password</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="/styles/style.css" type="text/css">
+<link href="/styles/indus.css" rel="stylesheet" type="text/css" /> 
 
 <SCRIPT LANGUAGE="JavaScript">
 
@@ -80,25 +93,14 @@ function validate(form)
 </script>
 </head>
 <body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-<table width="21%" border="0" cellspacing="0" cellpadding="0" align="left">
-  <tr bgcolor="#FFFFFF"> 
-    <td height="3" colspan="2"><img src="/img/blank.gif" height="3"></td>
-  </tr>
-  <tr> 
-    <td bgcolor="DFE1BC" colspan="2"><img src="/img/blank.gif" height="10"></td>
-  </tr>
-  
-  <tr> 
-    <td bgcolor="DFE1BC" width="17" align="left" valign="top">&nbsp;</td>
-    <td bgcolor="DFE1BC" valign="top" align="left"><br>
-
+<script language="javascript" src="/jscript/top.js"></script>
+	<table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>    
+    <td width="174" align="left" valign="top" bgcolor="#999933">
+		<cl:CLMsgSisLeftBandTag connObj="<%=conn%>" category="0" level="1"/>
 	</td>
-	</tr>
-  <tr> 
-    <td bgcolor="DFE1BC" width="17" align="left" valign="top">&nbsp;</td>
-    <td bgcolor="DFE1BC" height="275" valign="top" align="left">&nbsp;</td>
-  </tr>
-</table>
+
+	<td>
 <table width="79%" border="0" cellspacing="3" cellpadding="0" align="left">
   <tr> 
     <td colspan="2" bgcolor="B4BC6D"> 
@@ -112,21 +114,7 @@ function validate(form)
       </table>
     </td>
   </tr>
-  <tr> 
-    <td bgcolor="B4BC6D"> 
-      <table border="0" cellspacing="0" cellpadding="0">
-        
-        <tr> 
-          <td width="8">&nbsp;</td>
-          <td class="headblubld" height="34" valign="center">Change password</td>
-        </tr>
-        
-      </table>
-    </td>
-    <td rowspan="2" width="21%" align="left" valign="top">
-	
-    </td>
-  </tr>
+  
   <tr> 
     <td height="23">
 <form  method="POST" action="ChangePassword.jsp" name="form1" onSubmit="return validatePwd()">
@@ -169,3 +157,10 @@ function validate(form)
 	</form>
 </body>
 </html>
+<%
+	}
+	finally
+	{
+		clmsPool.freeConnection("erp",conn);
+	}
+%>

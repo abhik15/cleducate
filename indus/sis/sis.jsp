@@ -154,7 +154,7 @@ function chkSelect()
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td align="left" valign="top"><font class="global_nav"><a href="/common/learner/learner.html" class="global_nav">SIS</a></font></td>
+            <td align="left" valign="top"><font class="global_nav"></td>
           </tr>
           <tr>
             <td height="5" align="left" valign="top"></td>
@@ -169,7 +169,7 @@ function chkSelect()
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td align="left" valign="top"><font class="global_nav"><a href="/common/curriculum/curriculum.html" class="global_nav">Curriculum</a></font></td>
+            <td align="left" valign="top"><font class="global_nav"><a href="javascript:NewWindow=window.open('/common/curriculum/curriculum.html','newWin');NewWindow.focus(); void(0);" class="global_nav">Curriculum</a></font></td>
           </tr>
           <tr>
             <td height="5" align="left" valign="top"></td>
@@ -184,7 +184,7 @@ function chkSelect()
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td align="left" valign="top"><font class="global_nav"><a href="/common/parents/parents.html" class="global_nav">Parents</a></font></td>
+            <td align="left" valign="top"><font class="global_nav"><a  href="javascript:NewWindow=window.open('/common/parents/parents.html','newWin');NewWindow.focus(); void(0);" class="global_nav">Parents</a></font></td>
           </tr>
           <tr>
             <td height="5" align="left" valign="top"></td>
@@ -199,7 +199,7 @@ function chkSelect()
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td align="left" valign="top"><font class="global_nav"><a href="/common/mentor/mentor.html" class="global_nav">Mentor</a></font></td>
+            <td align="left" valign="top"><font class="global_nav"><a href="javascript:NewWindow=window.open('/common/mentor/mentor.html','newWin');NewWindow.focus(); void(0);" class="global_nav">Mentor</a></font></td>
           </tr>
           <tr>
             <td height="5" align="left" valign="top"></td>
@@ -214,12 +214,12 @@ function chkSelect()
   </tr>
 </table>
 <map name="MapMap" id="MapMap">
-  <area shape="rect" coords="13,3,46,32" href="/index.html" />
+  <area shape="rect" coords="13,3,46,32" href="javascript:NewWindow=window.open('/index.html','newWin');NewWindow.focus(); void(0);" />
 </map>
 <map name="Map2" id="Map2">
   <area shape="rect" coords="4,92,165,148" href="/index.html" />
   <area shape="rect" coords="7,6,63,24" href= "javascript:NewWindow=window.open('/location/3/contact.html','newWin','width=350,height=225,left=0,top=0, toolbar=No,location=No,scrollbars=No,status=No,resizable=No,fullscreen=No');NewWindow.focus(); void(0);" />
-  <area shape="rect" coords="78,4,136,24" href="/common/aboutus.html" />
+  <area shape="rect" coords="78,4,136,24" href="javascript:NewWindow=window.open('/common/aboutus.html','newWin');NewWindow.focus(); void(0);" />
 </map>
 <table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>

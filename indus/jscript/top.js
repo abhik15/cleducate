@@ -32,7 +32,6 @@ document.write("<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding
 document.write("<tr><td width=\"10\" height=\"5\" valign=\"top\"></td>");
 document.write("<td ></td></tr><tr><td>&nbsp;</td>");
 document.write("<td valign=\"top\"><font class=\"global_nav\">");
-document.write("<a href=\"/common/learner/learner.html\" class=\"global_nav\">SIS</a>");
 document.write("</font></td>");
 document.write("</tr><tr><td height=\"5\" valign=\"top\"></td><td></td></tr></table></td>");
 document.write("<td width=\"1\" valign=\"top\"><img src=\"/img/1x1.gif\" width=\"1\" height=\"1\" />");
@@ -42,7 +41,7 @@ document.write("<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding
 document.write("<tr><td width=\"10\" height=\"5\" valign=\"top\"></td>");
 document.write("<td ></td></tr><tr><td>&nbsp;</td>");
 document.write("<td valign=\"top\"><font class=\"global_nav\">");
-document.write("<a href=\"/common/curriculum/curriculum.html\" class=\"global_nav\">Curriculum</a></font></td>");
+document.write("<a href=\"/common/curriculum/curriculum.html\" class=\"global_nav\" target=\"_blank\">Curriculum</a></font></td>");
 document.write("</tr><tr><td height=\"5\" valign=\"top\"></td><td></td></tr></table></td>");
 document.write("<td width=\"1\" valign=\"top\"><img src=\"/img/1x1.gif\" width=\"1\" height=\"1\" />");
 document.write("</td><td width=\"174\" valign=\"middle\" bgcolor=\"#DF6400\">");
@@ -50,7 +49,7 @@ document.write("<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding
 document.write("<tr><td width=\"10\" height=\"5\" valign=\"top\"></td>");
 document.write("<td ></td></tr><tr><td>&nbsp;</td>");
 document.write("<td valign=\"top\"><font class=\"global_nav\">");
-document.write("<a href=\"/common/parents/parents.html\" class=\"global_nav\">Parents</a></font></td>");
+document.write("<a href=\"/common/parents/parents.html\" class=\"global_nav\" target=\"_blank\">Parents</a></font></td>");
 document.write("</tr><tr><td height=\"5\" valign=\"top\"></td><td></td></tr></table></td>");
 document.write("<td width=\"1\" valign=\"top\"><img src=\"/img/1x1.gif\" width=\"1\" height=\"1\" />");
 document.write("</td>");
@@ -59,7 +58,7 @@ document.write("<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding
 document.write("<tr><td width=\"10\" height=\"5\" valign=\"top\"></td><td ></td>");
 document.write("</tr><tr><td>&nbsp;</td>");
 document.write("<td valign=\"top\"><font class=\"global_nav\">");
-document.write("<a href=\"/common/mentor/mentor.html\" class=\"global_nav\">Mentor</a></font></td>");
+document.write("<a href=\"/common/mentor/mentor.html\" class=\"global_nav\" target=\"_blank\">Mentor</a></font></td>");
 document.write("</tr><tr><td height=\"5\" valign=\"top\"></td><td></td></tr></table></td>");
 document.write("<td width=\"1\" valign=\"top\"><img src=\"/img/1x1.gif\" width=\"1\" height=\"1\" />");
 document.write("</td><td align=\"center\" valign=\"middle\" bgcolor=\"#363A90\">");
