@@ -12,9 +12,9 @@
 	int payloadID = 0;
 	try
 	{
-//		payloadID = Integer.parseInt(request.getParameter("pid"));
-		payloadID= 2;
-System.out.println("PayloadId is " + payloadID);
+		payloadID = Integer.parseInt(request.getParameter("pid"));
+//		payloadID= 2;
+//System.out.println("PayloadId is " + payloadID);
 	}
 	catch(NumberFormatException nfe)
 	{
@@ -83,8 +83,8 @@ System.out.println("PayloadId is " + payloadID);
 			receiver="";
 		try
 		{
-//			qID = Integer.parseInt(request.getParameter("qid"));
-			qID = 1;
+			qID = Integer.parseInt(request.getParameter("qid"));
+//			qID = 1;
 			reply = (request.getParameter("reply") != null)
 						? request.getParameter("reply").equalsIgnoreCase("y") ? true : false 
 						: false;
@@ -184,9 +184,9 @@ System.out.println("PayloadId is " + payloadID);
 %>
 		<table width="100%" cellpadding="3" cellspacing="0" border="0">
 		<tr><td><font class="cnt"><%=Message %></font></td></tr>
-		<tr><td>
+		<!-- <tr><td>
 			<cl:writeChannels agentID="<%=agent.getAgentID() %>" destID="<%=agent.getDestID() %>" clSource="/msg/MSGStudentCompose.jsp" connObj="<%=conn%>" sisSource="/"/>
-		</td></tr>
+		</td></tr> -->
 		<tr><td>
 			<table width="100%" border="0" bordercolor=green cellspacing="0" cellpadding="0">
 			<tr> 

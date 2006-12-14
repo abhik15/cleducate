@@ -270,14 +270,20 @@ function chkSelect()
 <%
 						if (queueIDs!=null && queueIDs.length>0)
 						{
-							for(int i=0; i<queueIDs.length; i++)
+/*							for(int i=0; i<queueIDs.length; i++)
 							{
-								queueMaster= queues.getQueue(queueIDs[i]);
+								queueMaster= queues.getQueue(queueIDs[i]);				
 								out.println("<tr><td height=\"17\">&nbsp;</td><td><a href=\"/msg/MSGStudentCompose.jsp?qid=" 
 									+ queueMaster.getQID() + "&pid=" 
 									+ queueMaster.getPayloadID() + "\" class=\"lnkblu\">" 
 									+ queueMaster.getQDescr() + "</a></td></tr>");	
-							}
+*/
+								queueMaster= queues.getQueue(queueIDs[0]);
+								out.println("<tr><td height=\"17\">&nbsp;</td><td><a href=\"/msg/MSGStudentCompose.jsp?qid=1&pid=2\" class=\"lnkblu\">Contact Your Teacher</a></td></tr>");
+
+								queueMaster= queues.getQueue(queueIDs[1]);
+								out.println("<tr><td height=\"17\">&nbsp;</td><td><a href=\"/msg/MSGStudentCompose.jsp?qid=28&pid=1\" class=\"lnkblu\">Principal's Desk</a></td></tr>");
+//							}
 						}
 						else
 							out.println("<p class=\"cnt\">Sorry! you are not subscribed to any channel through which you can send a message. Please go to <a href=\"/msg/MSGChannels.jsp?cat=0\"  class=\"lnkblu\">Choose your Channels</a> link to subscribe to any of such channel.</p>");
