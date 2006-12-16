@@ -34,6 +34,8 @@
 	int total   = 0;
 	int queueIDs[] = null;
 	boolean showInbox=true;
+	int schoolId = 0;
+	int EnrollId = 0;
 	
 	try
 	{
@@ -63,6 +65,32 @@
 	{
 		poolManager.freeConnection("erp", connection);
 	}
+
+	callableStatement call=null;
+
+
+	try
+	{
+		connection = poolManager.getConnection("erp");
+		call = connection.prepareCall("{CALL ERP_USER_PKG.GET_ENROLL_ID(?,?,?)}");
+		call.setInt(1,userId);
+		call.registerOutParameter(2,enrollId);
+		call.registerOutParameter(3,schoolId);
+		call.execute();
+		enrollId = call.getInt(2);
+		schoolId = call.getInt(3);
+		
+	}
+	catch(Exception ex)
+	{
+		logCategory.error(ex);
+		throw ex;    
+	}
+	finally
+	{
+		poolManager.freeConnection("erp", connection);
+	}
+
 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
