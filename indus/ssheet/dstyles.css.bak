@@ -1,0 +1,157 @@
+.chapterheading {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14pt; font-weight: bold; color: #000000 ; text-decoration: none }
+
+.chphd1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 21pt; font-weight: bold; color: #000000 ; text-decoration: none }
+
+.subhead {  color: #0080DD; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; text-decoration: none}
+
+.topichead {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold; color: #000000 ; text-decoration: none }
+
+.subheadblk { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif ; font-size: 8pt; font-weight: bold ; text-decoration: none }
+
+.smallblktext {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000; text-decoration: none}
+
+.normaltext {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000000; text-decoration: none}
+
+.subjectlinks {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: 051694; font-weight: bold; text-decoration: underline}
+
+.td {  background-color: B9DAF2}
+
+.smallblkboldtext { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000 ; font-weight: bold; text-decoration: none}
+
+.subheadbold { color: #0080DD; font-family: Verdana, Arial, Helvetica, sans-serif ; font-size: 9pt; font-weight: bold; text-decoration: none}
+
+.subheadbold-2 { color: #009fe1; font-family: Verdana, Arial, Helvetica, sans-serif ; font-size: 9pt; font-weight: bold; text-decoration: none}
+
+.topicheading { font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold; color: #000000 ; text-decoration: none }
+
+.subjecwithoutlinks { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #999999; font-weight: bold; text-decoration: none}
+
+.topiclink { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif ; font-size: 10pt; font-weight: bold ; text-decoration: underline}
+
+.td1 { background-color: #CFDBBA}
+
+.td2 { background-color: #FFFBDF}
+
+.subjectcontent { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: 051694; font-weight: normal; text-decoration: none }
+
+a:hover {  color: #FF3300; text-decoration: underline}
+
+.subtopicbold { color: #0080DD; font-family: Arial, Helvetica, sans-serif; font-size: 11pt; font-weight: bold; text-decoration: none }
+
+.topicwithoutlink { color: #A4A4A4; font-family: Verdana, Arial, Helvetica, sans-serif ; font-size: 10pt; font-weight: bold ; text-decoration: none}
+.smallblktitletext { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000; text-decoration: none ; background-color: #DDDDDD}
+
+.smallblkblue {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #051694; text-decoration: none}
+
+.smallblueunder {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #051694; text-decoration: underline}
+
+.normalboldtext { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #000000 ; font-weight: bold; text-decoration: none}
+
+.normalwhite {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #FFFFFF; text-decoration: none}
+
+.subheadblue {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #0080dd; font-weight: bold; text-decoration: none}
+
+.greytext { font-family:  Arial, Helvetica, sans-serif; font-size: 12pt; color: #999999; font-weight: bold; text-decoration: none}
+
+.pageBreak {  page-break-before: always; page-break-after: always}.topicheading-1 {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; color: #999999}
+
+.topicheading-1 {  font-family: Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold; color: #999999}
+
+.smallblkboldtextunder { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000 ; font-weight: bold; text-decoration: underline}
+
+.smallblktextunder { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000; text-decoration: underline}
+
+.smallblkblueunder { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #051694; text-decoration: underline; font-weight: bold}
+
+.chphdhin {  font-family: Kruti Dev 014; font-size: 30pt; font-weight: bold; color: #000000 ; text-decoration: none}
+
+.subhdhin {  color: #0080DD; font-family: Kruti Dev 021; font-size: 12pt; text-decoration: none}
+
+.tphdhin {  font-family: Kruti Dev 021; font-size: 16pt; font-weight: bold; color: #000000 ; text-decoration: none }
+
+.subhdblkhin { color: #000000; font-family: Kruti Dev 021; font-size: 12pt; font-weight: bold ; text-decoration: none }
+
+.smlblkhin {  font-family: Kruti Dev 021; font-size: 13pt; color: #000000; text-decoration: none}
+
+.nmlhin {  font-family: Kruti Dev 021; font-size: 15pt; color: #000000; text-decoration: none}
+
+.sublnkhin {  font-family: Kruti Dev 021; font-size: 15pt; color: 051694; font-weight: bold; text-decoration: underline}
+
+.smlblkbldhin { font-family: Kruti Dev 021; font-size: 13pt; color: #000000 ; font-weight: bold; text-decoration: none}
+
+.subhdbldhin { color: #0080DD; font-family: Kruti Dev 021; font-size: 12pt; font-weight: bold; text-decoration: none}
+
+.subhdbld-2hin { color: #009fe1; font-family: Kruti Dev 021; font-size: 11pt; font-weight: bold; text-decoration: none}
+
+.tphdhin { font-family: Kruti Dev 021; font-size: 18pt; font-weight: bold; color: #000000 ; text-decoration: none }
+
+.subgrylnkhin { font-family: Kruti Dev 021; font-size: 12pt; color: #999999; font-weight: bold; text-decoration: none}
+
+.tplnkhin { color: #000000; font-family: Kruti Dev 021; font-size: 14pt; font-weight: bold ; text-decoration: underline}
+
+.subtpbldhin { color: #FFFFFF; font-family: vardana; font-size: 15pt; font-weight: bold; text-decoration: none }
+
+.tpgrylnkhin { color: #A4A4A4; font-family: Kruti Dev 021; font-size: 14pt; font-weight: bold ; text-decoration: none}
+
+.smlblkttlhin { font-family: Kruti Dev 021; font-size: 13pt; color: #000000; text-decoration: none ; background-color: #DDDDDD}
+
+.smlblkbluhin {  font-family: "Kruti Dev 021"; font-size: 16pt; color: #051694; text-decoration: none}
+
+.nmlbldhin { font-family: Kruti Dev 021; font-size: 15pt; color: #000000 ; font-weight: bold; text-decoration: none}
+
+.nmlwhthin {  font-family: Kruti Dev 021; font-size: 13pt; font-weight: bold; color: #FFFFFF; text-decoration: none}
+
+.subhdbluhin {  font-family: Kruti Dev 021; font-size: 13pt; color: #0080dd; font-weight: bold; text-decoration: none}
+
+.gryhin { font-family: Kruti Dev 021; font-size: 16pt; color: #999999; font-weight: bold; text-decoration: none}
+
+.smlblkbldundhin { font-family:Kruti Dev 021; font-size: 13pt; color: #000000 ; font-weight: bold; text-decoration: underline}
+
+.smlblkundhin { font-family: Kruti Dev 021; font-size: 13pt; color: #000000; text-decoration: underline}
+
+.smlblkbluundhin { font-family: Kruti Dev 021; font-size: 13pt; color: #051694; text-decoration: underline; font-weight: bold}
+
+.pageBreak {  page-break-before: always; page-break-after: always}
+
+.topband {background-color: #fdfd9f}
+
+.navbar {background-color: #009fe0}
+ 
+.regsubject {background-color: #abdcff}
+
+.feedback {background-color: #d6d6d6}
+
+.leftband {background-color: #FFD529}
+
+.glbNavBand {background-color: #009fe0}
+
+.glbTitleBand {background-color: #fdfd9f}
+
+.hintStyle 
+{
+    position: relative;
+    visibility: hidden;
+}
+.stepStyle 
+{
+    position: relative;
+    visibility: hidden;
+}
+.boxborder
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	text-decoration: none;
+	border: 1px #000000 solid
+}
+.tfield 
+{
+	margin:3px;
+	height:20px;
+	width:200px;
+	border:solid 0 #000000;
+
+}

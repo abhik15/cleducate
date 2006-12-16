@@ -1,0 +1,98 @@
+.topiclink { color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif ; font-size: 10pt; font-weight: bold ; text-decoration: underline}
+.boxborder
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	text-decoration: none;
+	border: 1px #000000 solid
+}
+.td1 { background-color: #CFDBBA}
+
+.td2 { background-color: #FFFBDF}
+
+.formField 
+{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: 051694; 
+	font-weight: normal; 
+	text-decoration: none 
+}
+.formMendatoryField
+{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: 051694; 
+	font-weight: bold; 
+	text-decoration: none 
+}
+.bodyBg{ background-color: #3E66B1 }
+
+.tableBg{ background-color: #DDDDDD }
+
+.pgTitle { }
+.formData 
+{ 
+	font-family: Verdana; 
+	font-size: 8pt; 
+	color: #000000; 
+	font-weight: normal; 
+	text-decoration: none 
+}
+.tableHeader 
+{ 
+	color: #0080DD; 
+	background-color: #B4BC6D;
+	font-family: Verdana, Arial, Helvetica, sans-serif ; 
+	font-size: 9pt; 
+	font-weight: bold; 
+	text-decoration: none
+}
+.tableData { }
+.lnkBld { }
+.lnkNormal { }
+.tableHeaderBg { }
+.tableBodyBg { }
+.pageText { }
+.pageNote { }
+.subjectcontent 
+{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: 051694; 
+	font-weight: normal; 
+	text-decoration: none 
+}
+.subtpbldhin 
+{ 
+	color: #FFFFFF; 
+	font-family: vardana; 
+	font-size: 15pt; 
+	font-weight: bold; 
+	text-decoration: none 
+}
+.subtpbldhin1
+{ 
+	color: #FFFFFF; 
+	font-family: vardana; 
+	font-size: 10pt; 
+	font-weight: bold; 
+	text-decoration: none 
+}
+.subheadbold 
+{ 
+	color: #0080DD; 
+	font-family: Verdana, Arial, Helvetica, sans-serif ; 
+	font-size: 9pt; 
+	font-weight: bold; 
+	text-decoration: none
+}
+.lnkblu {
+font-family : Verdana; 
+font-size : 8pt; 
+color : #00207b; 
+text-decoration : underline; 
+}
