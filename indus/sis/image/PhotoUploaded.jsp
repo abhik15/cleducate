@@ -8,6 +8,7 @@
 <html lang="EN">
 <title>Uploaded Photo</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Pragma" content="no-cache"> 
 <link rel="stylesheet" href="/ssheet/dstyles.css">
 <link rel="stylesheet" href="/ssheet/sstyles.css">
 </head>

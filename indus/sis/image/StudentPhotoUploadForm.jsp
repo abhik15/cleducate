@@ -13,13 +13,14 @@
 <head>
 <title>ERP Upload Photo</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Pragma" content="no-cache"> 
 <link rel="stylesheet" href="/ssheet/dstyles.css">
 </head>
 <body>
 <%
-	int schoolId = 1;
-//	String schoolEnrollId = request.getParameter("schoolEnrollId");
-	String schoolEnrollId = "465";
+	int schoolId = Integer.parseInt(request.getParameter("schoolId"));
+	String schoolEnrollId = request.getParameter("schoolEnrollId");
+//	String schoolEnrollId = "465";
     String errorMessage = request.getParameter( "error" );
     if ( errorMessage != null )
     {

@@ -2,7 +2,8 @@
 <cl:CLValidateSessionTag userType="CUSTOMER"/>
 
 <%@ page import="java.sql.*,oracle.jdbc.driver.*,java.io.*" %>
-<%@ page import="com.cl.sql.PoolManager,org.apache.log4j.*" errorPage="/epage/anandaError.jsp"%>
+<%@ page import="com.cl.sql.PoolManager,org.apache.log4j.*" %>
+<%@ page import="com.school.image.UploadPhotoBean,java.util.*" %>
 
 <% 
 	Category logCategory = Category.getInstance("school.sis");
@@ -27,6 +28,7 @@
 <jsp:setProperty name="queues" property="errorFileName" value="<%=logFile %>"/>
 
 <jsp:useBean id="queueMaster" class="com.cl.msg.MSGQueueMaster" scope="page" />
+<jsp:useBean id="album" scope="request" class="com.school.image.UploadPhotoBean"/>
 
 <%
 	int agentID = 0;
@@ -35,7 +37,7 @@
 	int queueIDs[] = null;
 	boolean showInbox=true;
 	int schoolId = 0;
-	int EnrollId = 0;
+	int enrollId = 0;
 	
 	try
 	{
@@ -66,19 +68,19 @@
 		poolManager.freeConnection("erp", connection);
 	}
 
-	callableStatement call=null;
+	CallableStatement callEnroll=null;
 
 
 	try
 	{
 		connection = poolManager.getConnection("erp");
-		call = connection.prepareCall("{CALL ERP_USER_PKG.GET_ENROLL_ID(?,?,?)}");
-		call.setInt(1,userId);
-		call.registerOutParameter(2,enrollId);
-		call.registerOutParameter(3,schoolId);
-		call.execute();
-		enrollId = call.getInt(2);
-		schoolId = call.getInt(3);
+		callEnroll = connection.prepareCall("{CALL ERP_USER_PKG.GET_ENROLL_ID(?,?,?)}");
+		callEnroll.setInt(1,userId);
+		callEnroll.registerOutParameter(2,OracleTypes.NUMBER);
+		callEnroll.registerOutParameter(3,OracleTypes.NUMBER);
+		callEnroll.execute();
+		enrollId = callEnroll.getInt(2);
+		schoolId = callEnroll.getInt(3);
 		
 	}
 	catch(Exception ex)
@@ -88,6 +90,7 @@
 	}
 	finally
 	{
+		try{callEnroll.close();}catch(Exception e){}
 		poolManager.freeConnection("erp", connection);
 	}
 
@@ -372,37 +375,50 @@ function chkSelect()
 					</TD>
 					<TD bgcolor="#CCFFFF" valign="top">
 					<CENTER><B>My Photo</B></CENTER><BR>
-						<TABLE>				
+					
+					<TABLE>				
 <%
-							boolean is_File = false;
-							String file="";
+					session.removeAttribute("studentPhoto");
+	
+					if(!album.selectStudentPhoto(schoolId,enrollId))
+					{
+						out.println("<i class=\"cnt\"> Photo has not been uploaded as yet. Please <a href=\"StudentPhotoUploadForm.jsp?schoolEnrollId="+enrollId+"&schoolId="+schoolId+"\" class=\"lnkbld\">Click Here</a> to upload the photo</i></table>");
 
-						file="/sis/student_img/"+userId+"/"+userId+".jpg";
-						is_File = (new File(application.getRealPath(file)).exists());
-						if(is_File)
-						{
+					}
+					else
+					{
+					session.setAttribute("studentPhoto",album);
+					album.setSchoolEnrollId(enrollId);
+					album.setSchoolId(schoolId);
+					}
+					if(album.getStudentImage() != null)
+					{
 %>
-							<TR>
-							<TD>
-								<a href="#" onclick="javascript: OpenWindow('/sis/student_img/showImg.jsp?userId=<%=userId%>','view_album','650','550')" class="lnkblu"><IMG SRC="<%=file%>" BORDER="0" ALT="<%=fname%>" width="112" height="102"></A>
-							</TD>
-							</TR>
+							
+								<center><a href="/sis/image/PhotoThumbViewer.jsp?media=image&p=s" target="image">
+							   <img src="/sis/image/PhotoThumbViewer.jsp?media=thumb&p=s" ></a></center><br>
+							   <center><a href="#" onclick="javascript: OpenWindow('/sis/image/PhotoUploaded.jsp?schoolId=<%=schoolId%>&schoolEnrollId=<%=enrollId%>','view_photo','650','550')" class="lnkblu">View/Upload Parents Photos</a>
+							   </center><br>
+								
+							
+							<!-- </TR>
 							<TR>
 							<TD align="center"><a href="#" onclick="javascript: OpenWindow('/sis/student_img/showImg.jsp?userId=<%=userId%>','view_album','650','550')" class="lnkblu"><IMG SRC="/img/my_album.gif" BORDER="0" ALT="<%=fname%>'s Album"></a></TD>
-						</TR>
+						</TR> -->
 <%
 						}
 						else
 						{
 %>
-							<CENTER><IMG SRC="student_img/noPhoto.gif" WIDTH="102" HEIGHT="112" BORDER="0" ALT="Please contact your school for uploading your photo"></CENTER> 
+							<CENTER><IMG SRC="student_img/noPhoto.gif" WIDTH="102" HEIGHT="112" BORDER="0" ALT="Please contact your school for uploading your photo"></CENTER>
+							<center><a href="/sis/image/PhotoUploaded.jsp?schoolId=<%=schoolId%>&schoolEnrollId=<%=enrollId%>" class="lnkblu">View/Upload Parents Photos</a></center><br>
 <%
 						}
 %>
-						<CENTER><IMG SRC="/img/my_album.gif" BORDER="0" ALT="<%=fname%>'s Album"></CENTER>
+						<!-- <CENTER><IMG SRC="/img/my_album.gif" BORDER="0" ALT="<%=fname%>'s Album"></CENTER> 
 						<TR>
 							<TD><hr width="100%" color="white"></TD>
-						</TR>
+						</TR>-->
 							
 						
 					</TABLE>

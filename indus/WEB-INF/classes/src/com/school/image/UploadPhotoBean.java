@@ -323,6 +323,10 @@ public class UploadPhotoBean
     {
         this.schoolEnrollId = schoolEnrollId;
     }
+	public void setSchoolId(int schoolId)
+    {
+        this.schoolId = schoolId;
+    }
 	public void setErrorMsg(String value)
 	{
 		errmsg = value;

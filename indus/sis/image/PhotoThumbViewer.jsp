@@ -86,7 +86,9 @@
 	}
 %>
 <%-- Don't understand the request --%>
-<html lang="EN"><head> <title> PhotoAlbumMediaViewer.jsp - malformed URL </title></head>
+<html lang="EN"><head> <title> PhotoAlbumMediaViewer.jsp - malformed URL </title>
+<meta http-equiv="Pragma" content="no-cache"> 
+</head>
 <body><a href="JavaScript:window.close();">Close</a>
 </body></html>
 
