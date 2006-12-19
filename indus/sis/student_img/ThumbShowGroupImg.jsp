@@ -25,7 +25,8 @@
 	}
 	catch(Exception ex)
 	{
-                out.println(ex.toString());
+//        out.println(ex.toString());
+		
 		totalFile = 0;
 	}
 %>
